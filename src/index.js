@@ -45,4 +45,16 @@ const findGcd = (a, b) => {
     return result;
 }
 
-export { correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement, findGcd }
+const createMassive = (first, step) => {
+    let massi = [];
+    let n = 0;
+    let another = first;
+    while (n < 10) {
+        massi.push(another);
+        another = another + step;
+        n = n + 1;
+    }
+    return massi;
+}
+
+export { correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement, findGcd, createMassive }
