@@ -24,4 +24,25 @@ const endGame = (i, name) => {
     }
 }
 
-export { correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement }
+const findGcd = (a, b) => {
+    let n = 1;
+    let result = 0;
+    if (a > b) {
+        while (n <= Math.ceil(b / 2)) {
+            if (a % n === 0 && b % n === 0) {
+                result = n;
+            }
+            n = n + 1;
+        }
+    } else if (a < b) {
+        while (n <= Math.ceil(a / 2)) {
+            if (a % n === 0 && b % n === 0) {
+                result = n;
+            }
+            n = n + 1;
+        }
+    }
+    return result;
+}
+
+export { correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement, findGcd }
