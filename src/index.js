@@ -57,4 +57,22 @@ const createMassive = (first, step) => {
     return massi;
 }
 
-export { correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement, findGcd, createMassive }
+const isPrime = (num) => {
+    let n = 2;
+    while (n < (num / 2 )) {
+        if (num % n === 0) {
+            return "no";
+        }
+        n = n + 1;
+    }
+    return "yes";
+} 
+
+const isEven = (num) => {
+    if (num % 2 === 0) {
+        return "yes";
+    } else {
+        return "no";
+    }
+}
+export { correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement, findGcd, createMassive, isPrime, isEven }

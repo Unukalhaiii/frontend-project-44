@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement } from '../index.js';
 
@@ -40,5 +39,6 @@ while (i < 3) {
 }
 endGame(i, name);
 }
+
 
 export {brainCalc};
