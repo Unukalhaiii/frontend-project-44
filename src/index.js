@@ -55,7 +55,7 @@ const createMassive = (first, step) => {
 
 const isPrime = (num) => {
   let n = 2;
-  while (n < (num / 2)) {
+  while (n <= (num / 2)) {
     if (num % n === 0) {
       return 'no';
     }
