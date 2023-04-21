@@ -12,17 +12,14 @@ const startGame = (instruction, generateRoundData) => {
       console.log('Correct!');
       i += 1;
     } else {
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-    console.log(`Let's try again, ${name}!`);
-    break;
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${name}!`);
+      break;
     }
   }
   if (i === 3) {
     console.log(`Congratulations, ${name}!`);
-    return;
-  } else {
-  return;
-  }
-}
+  } 
+};
 
 export default startGame;
