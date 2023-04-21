@@ -27,7 +27,7 @@ const startBrainProg = () => {
     console.log(`Question: ${massive.join(' ')}`);
     const answer = readlineSync.question('Your answer: ');
     return [answer, correctAnswer];
-  }
+  };
 
   startGame(instruction, generateBrainProgressionData);
 };

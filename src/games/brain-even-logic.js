@@ -3,7 +3,6 @@ import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
 const startBrainEven = () => {
-
   const instruction = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const isEven = (num) => {
@@ -19,7 +18,7 @@ const startBrainEven = () => {
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = isEven(randomNumber);
     return [answer, correctAnswer];
-  }
+  };
 
   startGame(instruction, generateBrainEvenData);
 };

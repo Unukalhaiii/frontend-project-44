@@ -24,7 +24,7 @@ const startBrainGcd = () => {
       }
     }
     return result;
-  }
+  };
 
   const generateBrainGcdData = () => {
     const randomNumber1 = getRandomNumber(1, 100);
@@ -33,7 +33,7 @@ const startBrainGcd = () => {
     console.log(`Question: ${randomNumber1} ${randomNumber2}`);
     const answer = readlineSync.question('Your answer: ');
     return [answer, correctAnswer];
-  }
+  };
 
   startGame(instruction, generateBrainGcdData);
 };

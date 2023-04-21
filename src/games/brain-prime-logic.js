@@ -14,7 +14,7 @@ const startBrainPrime = () => {
       n += 1;
     }
     return 'yes';
-  }
+  };
 
   const generateBrainPrimeData = () => {
     const randomNumber = getRandomNumber(2, 100);
@@ -22,7 +22,7 @@ const startBrainPrime = () => {
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = isPrime(randomNumber);
     return [answer, correctAnswer];
-  }
+  };
 
   startGame(instruction, generateBrainPrimeData);
 };
