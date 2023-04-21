@@ -1,76 +1,28 @@
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
+import readlineSync from 'readline-sync';
 
-const arrayRandElement = (mass) => {
-  const rand = Math.floor(Math.random() * mass.length);
-  return mass[rand];
-};
-
-const correctAnswer = () => {
-  console.log('Correct!');
-};
-
-const wrongAnswer = (c, w, name) => {
-  console.log(`"${w}" is wrong answer ;(. Correct answer was "${c}".`);
-  console.log(`Let's try again, ${name}!`);
-};
-
-const endGame = (i, name) => {
+const startGame = (instruction, generateRoundData) => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  console.log(instruction);
+  let i = 0;
+  while (i < 3) {
+    const [answer, correctAnswer] = generateRoundData();
+    if (String(answer) === String(correctAnswer)) {
+      console.log('Correct!');
+      i += 1;
+    } else {
+    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+    console.log(`Let's try again, ${name}!`);
+    break;
+    }
+  }
   if (i === 3) {
     console.log(`Congratulations, ${name}!`);
+    return;
+  } else {
+  return;
   }
-};
+}
 
-const findGcd = (a, b) => {
-  let n = 1;
-  let result = 0;
-  if (a > b) {
-    while (n <= b) {
-      if (a % n === 0 && b % n === 0) {
-        result = n;
-      }
-      n += 1;
-    }
-  } else if (a < b) {
-    while (n <= a) {
-      if (a % n === 0 && b % n === 0) {
-        result = n;
-      }
-      n += 1;
-    }
-  }
-  return result;
-};
-
-const createMassive = (first, step) => {
-  const massi = [];
-  let n = 0;
-  let another = first;
-  while (n < 10) {
-    massi.push(another);
-    another += step;
-    n += 1;
-  }
-  return massi;
-};
-
-const isPrime = (num) => {
-  let n = 2;
-  while (n <= (num / 2)) {
-    if (num % n === 0) {
-      return 'no';
-    }
-    n += 1;
-  }
-  return 'yes';
-};
-
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
-export {
-  correctAnswer, wrongAnswer, endGame, getRandomNumber, arrayRandElement, findGcd,
-  createMassive, isPrime, isEven,
-};
+export default startGame;
