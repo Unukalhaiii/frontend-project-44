@@ -19,7 +19,7 @@ const startGame = (instruction, generateRoundData) => {
   }
   if (i === 3) {
     console.log(`Congratulations, ${name}!`);
-  } 
+  }
 };
 
 export default startGame;

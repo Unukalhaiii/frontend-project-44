@@ -8,7 +8,7 @@ const startBrainCalc = () => {
   const arrayRandElement = (mass) => {
     const randElem = Math.floor(Math.random() * mass.length);
     return mass[randElem];
-  }
+  };
 
   const generateBrainCalcData = () => {
     const massive = ['+', '-', '*'];
@@ -31,10 +31,12 @@ const startBrainCalc = () => {
       case '*':
         correctAnswer = mult;
         break;
+      default:
+        break;
     }
     return [answer, correctAnswer];
-  }
- 
+  };
+
   startGame(instruction, generateBrainCalcData);
 };
 
