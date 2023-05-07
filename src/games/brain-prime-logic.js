@@ -8,7 +8,10 @@ const startBrainPrime = () => {
     let i = 2;
     let result = true;
     while (i <= (number / 2)) {
-      result = number % i === 0;
+      result = number % i !== 0;
+      if (result === false) {
+        return result;
+      }
       i += 1;
     }
     return result;
