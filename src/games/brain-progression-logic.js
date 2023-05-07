@@ -1,35 +1,34 @@
-import readlineSync from 'readline-sync';
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const startBrainProg = () => {
+const startBrainProgression = () => {
   const instruction = 'What number is missing in the progression?';
 
-  const createMassive = (first, step) => {
-    const newMassive = [];
-    let n = 0;
+  const createProgression = (first, step) => {
+    const newProgression = [];
+    let i = 0;
     let firstNumber = first;
-    while (n < 10) {
-      newMassive.push(firstNumber);
+    const elementAmount = 10;
+    while (i < elementAmount) {
+      newProgression.push(firstNumber);
       firstNumber += step;
-      n += 1;
+      i += 1;
     }
-    return newMassive;
+    return newProgression;
   };
 
   const generateBrainProgressionData = () => {
     const randomStep = getRandomNumber(1, 10);
     const chosenNumber = getRandomNumber(0, 9);
     const randomNumber = getRandomNumber(1, 50);
-    const massive = createMassive(randomNumber, randomStep);
-    const correctAnswer = massive[chosenNumber];
-    massive[chosenNumber] = '..';
-    console.log(`Question: ${massive.join(' ')}`);
-    const answer = readlineSync.question('Your answer: ');
-    return [answer, correctAnswer];
+    const numberRow = createProgression(randomNumber, randomStep);
+    const correctAnswer = numberRow[chosenNumber];
+    numberRow[chosenNumber] = '..';
+    const question = numberRow.join(' ');
+    return [correctAnswer, question];
   };
 
   startGame(instruction, generateBrainProgressionData);
 };
 
-export default startBrainProg;
+export default startBrainProgression;

@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
@@ -10,31 +9,38 @@ const startBrainCalc = () => {
     return mass[randElem];
   };
 
-  const generateBrainCalcData = () => {
-    const massive = ['+', '-', '*'];
-    const randomNumber1 = getRandomNumber(1, 100);
-    const randomNumber2 = getRandomNumber(1, 100);
-    const randomElem = arrayRandElement(massive);
-    console.log(`Question: ${randomNumber1} ${randomElem} ${randomNumber2}`);
-    const answer = readlineSync.question('Your answer: ');
-    const sum = String(randomNumber1 + randomNumber2);
-    const diff = String(randomNumber1 - randomNumber2);
-    const mult = String(randomNumber1 * randomNumber2);
-    let correctAnswer = '';
-    switch (randomElem) {
+  const generateRandomOperator = () => {
+    const operators = ['+', '-', '*'];
+    const randomOperator = arrayRandElement(operators);
+    return randomOperator;
+  };
+
+  const getSolution = (number1, number2) => {
+    let result = '';
+    const operator = generateRandomOperator();
+    switch (operator) {
       case '+':
-        correctAnswer = sum;
+        result = String(number1 + number2);
         break;
       case '-':
-        correctAnswer = diff;
+        result = String(number1 - number2);
         break;
       case '*':
-        correctAnswer = mult;
+        result = String(number1 * number2);
         break;
       default:
+        console.log('Unknown operator');
         break;
     }
-    return [answer, correctAnswer];
+    return [result, operator];
+  };
+
+  const generateBrainCalcData = () => {
+    const randomNumber1 = getRandomNumber(1, 100);
+    const randomNumber2 = getRandomNumber(1, 100);
+    const [correctAnswer, operator] = getSolution(randomNumber1, randomNumber2);
+    const question = `${randomNumber1} ${operator} ${randomNumber2}`;
+    return [correctAnswer, question];
   };
 
   startGame(instruction, generateBrainCalcData);
