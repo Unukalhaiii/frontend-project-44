@@ -1,3 +1,8 @@
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
-export default getRandomNumber;
+const arrayRandElement = (mass) => {
+    const randElem = Math.floor(Math.random() * mass.length);
+    return mass[randElem];
+};
+
+export {getRandomNumber, arrayRandElement};
