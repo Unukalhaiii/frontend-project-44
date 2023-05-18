@@ -1,4 +1,4 @@
-import {getRandomNumber, arrayRandElement} from '../utils.js';
+import { getRandomNumber, arrayRandElement } from '../utils.js';
 import startGame from '../index.js';
 
 const createProgression = (first, step) => {
