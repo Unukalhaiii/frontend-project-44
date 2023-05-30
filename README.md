@@ -1,3 +1,5 @@
+## Mind-games
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Unukalhaiii/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Unukalhaiii/frontend-project-44/actions)
 <a href="https://codeclimate.com/github/Unukalhaiii/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/656d61740c73082f333c/maintainability" /></a>
@@ -46,36 +48,6 @@ eslint-plugin-import: 2.27.5
 readline-sync: 1.4.10
 
 
-## Run brain-even
-
-```bash
-make brain-even
-```
-
-## Run brain-calc
-
-```bash
-make brain-calc
-```
-
-## Run brain-gcd
-
-```bash
-make brain-gcd
-```
-
-## Run brain-progression
-
-```bash
-make brain-progression
-```
-
-## Run brain-prime
-
-```bash
-make brain-prime
-```
-
 ## Run lint test
 
 ```bash
@@ -84,25 +56,35 @@ make lint
 
 ## Asciinema for brain-even
 
+make brain-even
+
 [![asciicast](https://asciinema.org/a/xbE1v6sWO66DpRB2XFZlayotG.svg)](https://asciinema.org/a/xbE1v6sWO66DpRB2XFZlayotG)
 
 
 ## Asciinema for brain-calc
+
+make brain-calc
 
 [![asciicast](https://asciinema.org/a/gcFg0Va8Au31Pkltqywlb3A0m.svg)](https://asciinema.org/a/gcFg0Va8Au31Pkltqywlb3A0m)
 
 
 ## Asciinema for brain-gcd
 
+make brain-gcd
+
 [![asciicast](https://asciinema.org/a/K0a6fjdJVtgESV5FUgN7evfCN.svg)](https://asciinema.org/a/K0a6fjdJVtgESV5FUgN7evfCN)
 
 
 ## Asciinema for brain-progression
 
+make brain-progression
+
 [![asciicast](https://asciinema.org/a/yyWCXVSvA1eIzEltZUKvc5DN4.svg)](https://asciinema.org/a/yyWCXVSvA1eIzEltZUKvc5DN4)
 
 
 ## Asciinema for brain-prime
+
+make brain-prime
 
 [![asciicast](https://asciinema.org/a/of6UgAYO5O6xJxfIohB9GmaYr.svg)](https://asciinema.org/a/of6UgAYO5O6xJxfIohB9GmaYr)
 

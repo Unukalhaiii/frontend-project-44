@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
@@ -6,7 +6,7 @@ const isEven = (number) => number % 2 === 0;
 const generateBrainEvenData = () => {
   const randomNumber = getRandomNumber(2, 1000);
   const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
-  return [correctAnswer, randomNumber];
+  return [String(correctAnswer), randomNumber];
 };
 
 const startBrainEven = () => {

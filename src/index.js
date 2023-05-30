@@ -5,20 +5,17 @@ const startGame = (instruction, generateRoundData) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(instruction);
-  let i = 0;
-  const rounds = 3;
-  while (i < rounds) {
+  const countRounds = 3;
+  for (let i = 0; i < countRounds; i += 1) {
     const [correctAnswer, question] = generateRoundData();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (String(answer) === String(correctAnswer)) {
-      console.log('Correct!');
-      i += 1;
-    } else {
+    if (answer !== correctAnswer) {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };

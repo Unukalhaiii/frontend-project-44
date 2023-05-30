@@ -1,22 +1,18 @@
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
 const isPrime = (number) => {
-  let i = 2;
-  let result = true;
-  while (i <= (number / 2)) {
-    result = (number % i) !== 0;
-    if (result === false) {
-      return result;
+  for (let i = 2; i <= (number / 2); i += 1) {
+    if (number % i === 0) {
+      return false;
     }
-    i += 1;
   }
-  return result;
+  return number > 1;
 };
 
 const generateBrainPrimeData = () => {
   const randomNumber = getRandomNumber(2, 100);
-  const correctAnswer = (isPrime(randomNumber)) ? 'yes' : 'no';
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   return [correctAnswer, randomNumber];
 };
 

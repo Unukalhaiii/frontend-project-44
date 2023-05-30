@@ -1,15 +1,12 @@
-import { getRandomNumber, arrayRandElement } from '../utils.js';
+import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const createProgression = (first, step) => {
+const createProgression = (first, step, elementAmount = 10) => {
   const newProgression = [];
-  let i = 0;
   let firstNumber = first;
-  const elementAmount = 10;
-  while (i < elementAmount) {
+  for (let i = 0; i < elementAmount; i += 1) {
     newProgression.push(firstNumber);
     firstNumber += step;
-    i += 1;
   }
   return newProgression;
 };
@@ -18,10 +15,10 @@ const generateBrainProgressionData = () => {
   const randomStep = getRandomNumber(1, 10);
   const randomNumber = getRandomNumber(1, 50);
   const numberRow = createProgression(randomNumber, randomStep);
-  const correctAnswer = arrayRandElement(numberRow);
+  const correctAnswer = numberRow[getRandomNumber(0, 9)];
   numberRow[numberRow.indexOf(correctAnswer)] = '..';
   const question = numberRow.join(' ');
-  return [correctAnswer, question];
+  return [String(correctAnswer), question];
 };
 
 const startBrainProgression = () => {
